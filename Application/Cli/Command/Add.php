@@ -4,9 +4,7 @@ namespace Application\Cli\Command;
 
 use Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Input\InputOption,
-	Symfony\Component\Console,
-    Symfony\Component\Console\Input\InputInterface,
-	Symfony\Component\Console\Input\OutputInterface;
+    Symfony\Component\Console;
     
 /**
  * Add command.
@@ -36,7 +34,7 @@ class Add extends Console\Command\Command {
     /**
      * Calculates the sum of two numbers.
      */
-    protected function execute(InputInterface $input, OutputInterface $output) {
+    protected function execute(Console\Input\InputInterface $input, Console\Output\OutputInterface $output) {
         $result = $input->getArgument('x') + $input->getArgument('y');
 		if ($input->getOption('round')) {
 			$result = round($result);
